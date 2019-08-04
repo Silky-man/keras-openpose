@@ -14,7 +14,7 @@ from training.dataset import read_img, gen_mask, augment, apply_mask, \
     create_all_mask, ALL_HEATMAP_MASK, ALL_PAF_MASK
 from training.label_maps import create_heatmap, create_paf
 
-
+#数据集处理好后进行预览显示
 def _get_bgimg(inp, target_size=None):
     """
     Get a RGB image from cv2 BGR

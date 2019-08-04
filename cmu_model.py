@@ -125,7 +125,7 @@ def get_training_model(weight_decay):
 
     inputs = []
     outputs = []
-
+    #创建三输入的输入格式
     img_input = Input(shape=img_input_shape)
     vec_weight_input = Input(shape=vec_input_shape)
     heat_weight_input = Input(shape=heat_input_shape)
@@ -164,7 +164,7 @@ def get_training_model(weight_decay):
 
         outputs.append(w1)
         outputs.append(w2)
-
+    #特征图通道拼接
         if (sn < stages):
             x = Concatenate()([stageT_branch1_out, stageT_branch2_out, stage0_out])
 
@@ -204,7 +204,7 @@ def get_testing_model():
 
         if (sn < stages):
             x = Concatenate()([stageT_branch1_out, stageT_branch2_out, stage0_out])
-
+    #测试最后只有两个输出
     model = Model(inputs=[img_input], outputs=[stageT_branch1_out, stageT_branch2_out])
 
     return model

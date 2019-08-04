@@ -69,6 +69,7 @@ def create_paf(num_maps, height, width, all_joints, threshold, stride):
 
 
 def _put_heatmap_on_plane(heatmap, plane_idx, joint, sigma, height, width, stride):
+#使用高斯函数生成热力图
     start = stride / 2.0 - 0.5
 
     center_x, center_y = joint
@@ -89,7 +90,7 @@ def _put_heatmap_on_plane(heatmap, plane_idx, joint, sigma, height, width, strid
 
 def _put_paf_on_plane(vectormap, countmap, plane_idx, x1, y1, x2, y2,
                      threshold, height, width):
-
+#生成X和Y方向的特征向量图
     min_x = max(0, int(round(min(x1, x2) - threshold)))
     max_x = min(width, int(round(max(x1, x2) + threshold)))
 

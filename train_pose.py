@@ -123,7 +123,6 @@ def get_lr_multipliers(model):
 def get_loss_funcs():
     """
     Euclidean loss as implemented in caffe
-    https://github.com/BVLC/caffe/blob/master/src/caffe/layers/euclidean_loss_layer.cpp
     :return:
     """
     def _eucl_loss(x, y):
